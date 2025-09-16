@@ -60,9 +60,6 @@
         .timeline-container.right::after {
             left: -10px;
         }
-        .timeline-content {
-            @apply p-5 bg-white rounded-lg shadow-lg;
-        }
         @media screen and (max-width: 768px) {
             .timeline::after {
                 left: 31px;
@@ -88,6 +85,7 @@
         <div class="container mx-auto max-w-6xl px-6">
             <div class="flex items-center justify-between h-16">
                 <a href="#" class="text-xl font-bold text-slate-800">Badar Akhtar</a>
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-slate-600 hover:text-sky-500 transition-colors">About</a>
                     <a href="#skills" class="text-slate-600 hover:text-sky-500 transition-colors">Skills</a>
@@ -95,6 +93,20 @@
                     <a href="#projects" class="text-slate-600 hover:text-sky-500 transition-colors">Projects</a>
                     <a href="#education" class="text-slate-600 hover:text-sky-500 transition-colors">Education</a>
                 </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-sky-500 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4">
+                <a href="#about" class="block text-slate-600 hover:text-sky-500 py-2">About</a>
+                <a href="#skills" class="block text-slate-600 hover:text-sky-500 py-2">Skills</a>
+                <a href="#experience" class="block text-slate-600 hover:text-sky-500 py-2">Experience</a>
+                <a href="#projects" class="block text-slate-600 hover:text-sky-500 py-2">Projects</a>
+                <a href="#education" class="block text-slate-600 hover:text-sky-500 py-2">Education</a>
             </div>
         </div>
     </nav>
@@ -168,10 +180,9 @@
         <section id="education" class="py-16">
             <h2 class="section-title"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.342.117l8.688 4.012a1 1 0 00.788 0l7-3a1 1 0 000-1.84l-4.25-1.823a.999.999 0 01-.342-.117L10.394 2.08z" /><path d="M10 12.585l-4.25-1.823a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84l7 3a1 1 0 00.788 0l7-3a1 1 0 000-1.84l-4.25-1.823a1 1 0 00-.788 0z" /></svg>Education</h2>
             <div class="timeline">
-                <div class="timeline-container right"><div class="timeline-content"><h3 class="font-bold text-lg text-slate-800">Master of Technology, CSE</h3><p class="text-sm text-slate-600 font-medium mt-1">J. K. Institute of Applied Physics and Technology
-, University of Allahabad</p><span class="text-xs font-medium text-slate-400">2020-22</span><p class="mt-2 text-sm">Aggregate: 8.94 CGPA</p></div></div>
+                <div class="timeline-container right"><div class="timeline-content"><h3 class="font-bold text-lg text-slate-800">Master of Technology, CS</h3><p class="text-sm text-slate-600 font-medium mt-1">J.K. Institute, University of Allahabad</p><span class="text-xs font-medium text-slate-400">2020-22</span><p class="mt-2 text-sm">Aggregate: 8.94 CGPA</p></div></div>
                 <div class="timeline-container left"><div class="timeline-content"><h3 class="font-bold text-lg text-slate-800">PG Diploma, Big Data Analytics</h3><p class="text-sm text-slate-600 font-medium mt-1">CDAC, Pune</p><span class="text-xs font-medium text-slate-400"></span><p class="mt-2 text-sm">Aggregate: 70.67%</p></div></div>
-                <div class="timeline-container right"><div class="timeline-content"><h3 class="font-bold text-lg text-slate-800">Bachelor of Technology, CSE</h3><p class="text-sm text-slate-600 font-medium mt-1">Naraina College of Engineering & Technology, Kanpur</p><span class="text-xs font-medium text-slate-400"></span><p class="mt-2 text-sm">Aggregate: 70.38%</p></div></div>
+                <div class="timeline-container right"><div class="timeline-content"><h3 class="font-bold text-lg text-slate-800">Bachelor of Technology, CS</h3><p class="text-sm text-slate-600 font-medium mt-1">Naraina College of Engg. and Tech., Kanpur</p><span class="text-xs font-medium text-slate-400"></span><p class="mt-2 text-sm">Aggregate: 70.38%</p></div></div>
             </div>
         </section>
 
@@ -190,12 +201,15 @@
         <p>&copy; 2025 Badar Akhtar. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
 
